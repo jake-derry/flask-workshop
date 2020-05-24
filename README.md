@@ -39,18 +39,24 @@ command you want to run with `pipenv run`.
 ## Hello, World!
 
 The best thing about Flask is that it is SUPER easy to get started, so straight
-from the Flask documentation, here is the Hello, World! application in Flask.
+from the [Flask documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/), here is the Hello, World! application in Flask.
 
 ```python
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/hello')
 def hello_world():
     return 'Hello, World!'
 ```
 
 Put this code in a file named `app.py` and run `flask run` in the directory that
 the `app.py` file is. Now, you can see your application on your local host.
-[See your application](http://127.0.0.1:5000/)!
+[See your application](http://127.0.0.1:5000/hello)!
 
+### How does this work?
+
+First, you created the web application. Then, you created a function that
+returns 'Hello, World!'. You gave that function the '/hello' route, so when
+you go to 'http://127.0.0.1:5000/hello', the application runs the `hello_world`
+function. Boom! You see 'Hello, World!'
