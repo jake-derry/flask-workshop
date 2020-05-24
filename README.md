@@ -36,7 +36,7 @@ command you want to run with `pipenv run`.
 
 [More about `pipenv`](https://docs.python-guide.org/dev/virtualenvs/)
 
-## Bare bones
+## Hello, World!
 
 The best thing about Flask is that it is SUPER easy to get started, so straight
 from the Flask documentation, here is the Hello, World! application in Flask.
@@ -50,4 +50,7 @@ def hello_world():
     return 'Hello, World!'
 ```
 
-If you put this code in a file called `app.py` and ran it with `flask run`
+Put this code in a file named `app.py` and run `flask run` in the directory that
+the `app.py` file is. Now, you can see your application on your local host.
+[See your application](http://127.0.0.1:5000/)!
+
