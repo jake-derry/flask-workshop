@@ -60,3 +60,48 @@ First, you created the web application. Then, you created a function that
 returns 'Hello, World!'. You gave that function the '/hello' route, so when
 you go to 'http://127.0.0.1:5000/hello', the application runs the `hello_world`
 function. Boom! You see 'Hello, World!'
+
+## The Flask architecture
+
+Now that we have Flask working, with only 5 lines of code, it's time to create
+something that's actually interesting.
+
+Flask is a web framework that doesn't have many hard requirements. For example,
+you can organize your file system however you'd like, but here is a file
+structure that encourages modularity.
+
+The file system looks something like this:
+
+```
+app.py                # links the application together
+config.py             # stores application configurations
+manage.py             # manages the application using Flask-Manager
+app/                  # a package for a specific app within your larger app
+├ __init__.py         # initializes the app package
+├ controller.py       # stores the controllers of the application 
+├ model.py            # models the application
+├ forms.py            # stores application forms using Flask-WTF
+├ static/             # a folder for static files (CSS, JS, HTML)
+└ templates/          # a folder for dynamic Jinja HTML templates
+```
+
+Why this file structure:
+
+1. Scalable to multiple sub-applications in your web application. For example,
+if you are building a job site, you will want a sub-application for searching
+employers and another for job applicants.
+
+2. Uses the [MVC design pattern](https://www.geeksforgeeks.org/mvc-design-pattern/).
+The MVC design pattern breaks an application into a model, view, and controller.
+The Model stores the information about the application and performs business
+logic. The View determines how the Model will be displayed. The Controller
+connects the model and view to initate changes to the model and display of the
+view. In this file structure, each of these parts are stored in separate files.
+In fact, Jinja templates also function as part of the view that separates the
+data from how it is displayed.
+
+3. Allows management and configuration. The `config.py` file stores possible
+configurations that can be used. The `manage.py` file allows easy database and
+application management. For example, some of the management that Python provides
+support for includes initializing a database: `python manage.py db init`.
+
