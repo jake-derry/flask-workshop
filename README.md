@@ -105,3 +105,27 @@ configurations that can be used. The `manage.py` file allows easy database and
 application management. For example, some of the management that Python provides
 support for includes initializing a database: `python manage.py db init`.
 
+## Building a simple application
+
+To start with Flask, let's create a simple application that will make use of
+some interesting Flask extensions like:
+- Flask-WTF (forms)
+- Flask-Migrate (database migration)
+- Flask-Assets (asset management)
+- SQLAlchemy (easy database management)
+- Flask-Login (login management)
+- Flask-Admin (administration)
+
+We are going to build a simple Flask application that stores users notes. Here
+are some important features we want to offer:
+- User data is consistent even when the web application is restarted
+- User's notes are safe with authentication
+- Admins can help users if they have trouble with login
+
+Our application will be broken into two sub-applications: authentication (auth)
+and the actual notes application (notes).
+
+### Adding user authentication
+
+Before we can expand the notes application, we need to be able to authenticate
+users, so each user's notes will be private to them.

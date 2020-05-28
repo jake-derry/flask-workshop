@@ -7,6 +7,13 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+flask-script = "*"
+flask-sqlalchemy = "*"
+flask-login = "*"
+flask-migrate = "*"
+flask-wtf = "*"
+werkzeug = "*"
+email-validator = "*"
 
 [requires]
 python_version = "3.8"
