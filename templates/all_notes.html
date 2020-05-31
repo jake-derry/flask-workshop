@@ -9,10 +9,16 @@
           <li class="box">
             <h1 class="box">{{ note.title }}</h1>
             <p>{{ note.content }}</p>
+            <form method="POST" action="/notes/{{ note.id }}">
+              <input type="submit" value="Delete"/>
+            </form>
             <br>
           </li>
         {% endfor %}
       </ul>
+      <form action="/notes/add">
+        <input type="submit" value="New note"/>
+    </form>
     </div>
 </div>
 {% endblock %}

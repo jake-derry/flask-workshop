@@ -22,3 +22,9 @@ def add_note():
     db.session.commit()
     return redirect(url_for('notes.display_all_notes'))
   return render_template('note.html', form=form)
+
+@login_required
+def delete_note(note_id):
+  Note.query.filter_by(id=note_id).delete()
+  db.session.commit()
+  return redirect(url_for('notes.display_all_notes'))

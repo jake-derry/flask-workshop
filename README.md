@@ -125,7 +125,4 @@ are some important features we want to offer:
 Our application will be broken into two sub-applications: authentication (auth)
 and the actual notes application (notes).
 
-### Adding user authentication
-
-Before we can expand the notes application, we need to be able to authenticate
-users, so each user's notes will be private to them.
+Take a look at the application to see these features in use. 

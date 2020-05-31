@@ -11,4 +11,9 @@ routes = [
     'view_func' : display_all_notes,
     'methods' : ['GET']
   },
+  {
+    'name' : '<int:note_id>',
+    'view_func' : delete_note,
+    'methods' : ['POST']
+  }
 ]
