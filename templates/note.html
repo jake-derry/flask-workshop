@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Make new note</h3>
+    <div class="box">
+        <form method="POST" action="/notes/add">
+              {{ form.hidden_tag() }}
+          <p>
+              {{ form.title.label }}<br>
+              {{ form.title(size=32) }}
+          </p>
+          <p>
+              {{ form.content.label }}<br>
+              {{ form.content(cols="50", rows="50") }}
+          </p>
+          <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+</div>
+{% endblock %}

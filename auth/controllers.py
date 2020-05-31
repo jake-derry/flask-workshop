@@ -3,7 +3,7 @@
 # are added to the route in the `routes.py` file.
 
 from flask.templating import render_template
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user, logout_user
 from auth.forms import LoginForm
 from auth.forms import RegistrationForm
 from flask.helpers import flash, url_for
@@ -40,4 +40,5 @@ def signup():
   return render_template('signup.html', title='Register', form=form)
 
 def logout():
-  return 'logout'
+  logout_user()
+  return redirect(url_for('auth.login'))

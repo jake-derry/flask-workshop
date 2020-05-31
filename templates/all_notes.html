@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Your notes</h3>
+    <div class="box">
+      <ul>
+        {% for note in notes %}
+          <li class="box">
+            <h1 class="box">{{ note.title }}</h1>
+            <p>{{ note.content }}</p>
+            <br>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock %}

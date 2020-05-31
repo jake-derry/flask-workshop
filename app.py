@@ -14,9 +14,11 @@ migrate = Migrate(app, db)
 
 # Import blueprints
 from auth import auth
+from notes import notes
 
 # Register blueprints
 app.register_blueprint(auth)
+app.register_blueprint(notes)
 
 # Connect login_manager
 login_manager = setup_login_manager()
@@ -26,5 +28,4 @@ login_manager.init_app(app)
 @app.route('/home', endpoint='home')
 @login_required
 def profile():
-  user = current_user
-  return 'You found your profile!'
+  return redirect(url_for('notes.display_all_notes'))
